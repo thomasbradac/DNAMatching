@@ -4,7 +4,7 @@ public class StrandDNA
 
 		public static void main(String[] args)
 			{
-				
+				DNA();
 
 			}
 		
@@ -15,21 +15,37 @@ public class StrandDNA
 			String givenStrand = userStringInput.nextLine();
 			String[] givenArray = new String[10];
 			givenArray = givenStrand.split("");
-			String result[] = new String[10];
+			String result = "" ;
 			
 			
 			for (int i = 0; i < 10; i++)
 				{
 					if (givenArray[i].equals("A") || givenArray[i].equals("a"))
 						{
-							result[i].equals("T");
+							result += "T";
 						}
 					else if (givenArray[i].equals("T") || givenArray[i].equals("t"))
 						{
-							result[i].equals("A");
+							result += "A";
+						}
+					else if (givenArray[i].equals("G") || givenArray[i].equals("g"))
+						{
+							result += "C";
+						}
+					else if (givenArray[i].equals("C") || givenArray[i].equals("c"))
+						{
+							result += "G";
+						}
+					else
+						{
+							System.out.println("That is a mutation!");
+							System.exit(0);
 						}
 					
+					
 				}
+		
+			System.out.println(result);
 				
 		}
 
